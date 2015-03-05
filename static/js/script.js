@@ -98,7 +98,7 @@ var setImageInPlace = function(containerHeight, containerWidth, availableWidth, 
     var imgPath = Images[index].imagePath;
     var image = $('<img src = ' + imgPath + ' />');
     
-    image.on('mouseover', function(){
+    image.on('mouseover', function(event){
         var feedbackBox = $('<div class = "feedback-box"></div>');
         var x = $(this).offset().left;
         var y = $(this).offset().top;
@@ -121,7 +121,7 @@ var setImageInPlace = function(containerHeight, containerWidth, availableWidth, 
         event.stopPropagation();
     });
     
-    image.on('mouseout', function(){
+    image.on('mouseout', function(event){
         if (parseFloat(imageObjectOnFocus.feedback) == 0.0){
             imageObjectOnFocus.feedbackBox.remove();
             imageObjectOnFocus.feedbackBox = undefined;
