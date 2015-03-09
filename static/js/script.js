@@ -14,7 +14,7 @@ var availableWidth = 0;
 
 var availableHeight = screenHeight;
 var imageHeightFactor = 3.25;
-var totalNoOfImages = 6;
+var totalNoOfImages = 12;
 
 var imagesInCurrentRow = [];
 
