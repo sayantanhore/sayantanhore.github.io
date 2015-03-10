@@ -10,7 +10,8 @@ var imagesPerRow = 4;
 var totalImages = 2 * 4;
 
 var marginWidth = 2;
-var availableWidth = screenWidth - (imagesPerRow * 2 + 8) * marginWidth;
+var availableWidth = 0;
+var availableHeight = 0;
 
 var Images = [];
 var imageObjectOnFocus = undefined;
@@ -23,13 +24,15 @@ var __EVENTS__ = [];
 // -----------------------------------------------
 
 $(document).ready(function(){
+    availableWidth = screenWidth - (imagesPerRow * 2 + 4) * marginWidth;
+    availableHeight = screenHeight - $('#title').height() - (2 * 2 + 8) * marginWidth;
     $("#container").css("width", screenWidth + "px");
     $("#container").css("height", screenHeight + "px");
     for (var i = 0; i < 8; i ++){
         var div = $("<div class = 'image-box'/>");
         $("#container").append(div);
         div.css("width", (parseFloat(availableWidth) / 4 - (0 * marginWidth)) + "px");
-        div.css("height", (parseFloat(availableWidth) / 4 - (0 * marginWidth)) + "px");
+        div.css("height", (parseFloat(availableHeight) / 2 - (0 * marginWidth)) + "px");
         
     }
 });
