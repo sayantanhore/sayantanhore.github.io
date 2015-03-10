@@ -9,8 +9,8 @@ var screenWidth = parseInt($(window).width() * 100) / 100;
 var imagesPerRow = 4;
 var totalImages = 2 * 4;
 
-var marginWidth = 4;
-var availableWidth = screenWidth - (imagesPerRow * 2) * marginWidth;
+var marginWidth = 2;
+var availableWidth = screenWidth - (imagesPerRow * 2 + 8) * marginWidth;
 
 var Images = [];
 var imageObjectOnFocus = undefined;
@@ -28,8 +28,8 @@ $(document).ready(function(){
     for (var i = 0; i < 8; i ++){
         var div = $("<div class = 'image-box'/>");
         $("#container").append(div);
-        div.css("width", (parseFloat(availableWidth) / 4 - (1 * marginWidth)) + "px");
-        div.css("height", (parseFloat(availableWidth) / 4 - 2) + "px");
+        div.css("width", (parseFloat(availableWidth) / 4 - (0 * marginWidth)) + "px");
+        div.css("height", (parseFloat(availableWidth) / 4 - (0 * marginWidth)) + "px");
         
     }
 });
