@@ -189,7 +189,6 @@ $(document).ready(function(){
     // -----------------------------------------------
 
     $('#done').on('click', function(){
-            alert(11111)
             Log("DONE_CLICKED", Date.now(), "N/A", "N/A", "N/A");
             recordEventsToFile();
     });
