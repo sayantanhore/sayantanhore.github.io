@@ -1,44 +1,30 @@
 <!DOCTYPE html>
-<head>
-    <title>The Test Page</title>
-    
-    <link href='http://fonts.googleapis.com/css?family=Lato|Poiret+One|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/slider.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/justifiedGallery.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/color_palette.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/image_gallery.css">
-    
-    <script type="text/javascript" src="../static/js/jquery-1.11.1.js"></script>
-    <script type="text/javascript" src="../static/js/react.js"></script>
-    <script type="text/javascript" src="../static/js/JSXTransformer.js"></script>
-</head>
-<body>
-    <div id = 'example'></div>
-    <script type="text/jsx">
-    
-        var image = <img src = '../static/images/im1.jpg'/>
-        var Image2 = React.createClass({
-            getInitialState: function(){
-                return {
-                    source: '../static/images/im1.jpg'
-                }
-            },
-            updateSource: function(event){
-                this.setState({source: '../static/images/im2.jpg'})
-                event.target.src = this.state.source;
-            },
-            render: function(){
-                var source = this.state.source;
-                return(
-                    <img src = {source} onClick = {this.updateSource}/>
-                );
-            }
-        });
-        React.render(
-            <Image2/>,
-            $('#example')[0]
-        );
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Image Gallery</title>
+        <link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css'>
+        <link rel = 'stylesheet' type = 'text/css' href = 'static/css/styles.css'/>
         
-    </script>
-</body>
+        <script language = 'javascript' type = 'text/javascript' src = 'static/js/jquery-1.11.3.min.js'></script>
+        
+        <script language = 'javascript' type = 'text/javascript' src = 'static/js/util.js'></script>
+        <script language = 'javascript' type = 'text/javascript' src = 'static/js/properties.js'></script>
+        <script language = 'javascript' type = 'text/javascript' src = 'static/js/model.js'></script>
+        <script language = 'javascript' type = 'text/javascript' src = 'static/js/controller.js'></script>
+        <script language = 'javascript' type = 'text/javascript' src = 'static/js/script.js'></script>
+        
+        <script src = 'static/js/react.js'></script>
+        <script src = 'static/js/react-dom.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+        
+        
+        
+    </head>
+    <body>
+        <div id = 'menubar'></div>
+        <div id = 'container'></div>
+        
+        <script type="text/babel" src="static/js/view.js"></script>
+    </body>
+</html>
