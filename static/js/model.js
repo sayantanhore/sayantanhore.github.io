@@ -8,7 +8,8 @@ IMG_GAL.model = {
         
         return ({
             index: imgObj.index,
-            path: 'static/images/im' + (parseInt(imgObj.index) + 1) + '.jpg',
+            //path: 'static/images/im' + (parseInt(imgObj.index) + 1) + '.jpg',
+            path: '../static/images/im' + (parseInt(imgObj.index) + 1) + '.jpg',
             rendered: false,
             feedback: 0.0
         })
