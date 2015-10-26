@@ -1,5 +1,5 @@
 node_modules/*
-
+static/react-0.14.0/*
 .DS_Store
 static/css/.DS_Store
 static/images/.DS_Store
