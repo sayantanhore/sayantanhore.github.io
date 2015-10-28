@@ -1,6 +1,10 @@
 "use strict";
 
-
+/** @view
+*   ReactDOM Object
+*   'MenuItem'
+*   ---------------
+*/
 var MenuItem = React.createClass({
     mouseOverHandler: function(){
         $(ReactDOM.findDOMNode(this)).css('cursor', 'pointer');
@@ -18,6 +22,14 @@ var MenuItem = React.createClass({
             console.log("Index :: " + image.index);
             console.log("Feedback :: " + image.feedback);
         });
+        
+        /** @view
+        *   method
+        *   'predict'
+        *   calls the @sub-namespace: IMG_GAL.model.predict
+        *   -----------------------------------------------
+        */
+        
         IMG_GAL.controller.predict(
             {
                 loc: IMG_GAL.globals.getLoc(),
@@ -35,6 +47,12 @@ var MenuItem = React.createClass({
     }
 });
 
+/** @view
+*   ReactDOM Object
+*   'MenuItems'
+*   holds 'MenuItem's
+*   -----------------
+*/
 var MenuItems = React.createClass({
     
     render: function(){
@@ -55,7 +73,12 @@ ReactDOM.render(
 
 // *********************************************************************************************
 
-
+/** @view
+*   ReactDOM Object
+*   'Gallery'
+*   holds the set of images on the screen
+*   -------------------------------------
+*/
 var Gallery = React.createClass({
     getInitialState: function(){
         return {
@@ -70,6 +93,12 @@ var Gallery = React.createClass({
         elem.css("height", IMG_GAL.util.attachUnit(IMG_GAL.globals.getScreenHeight() - IMG_GAL.util.getPxForEm(2.5)))
     },
     
+    /** @view
+    *   method
+    *   'adjustRow'
+    *   called to 'justify' images in the previous row
+    *   ----------------------------------------------
+    */
     adjustLastRow: function(_$images, totalWidth, margin, imagesInCurrRow, lastRow){
         var firstIndex  = imagesInCurrRow[0];
         var lastIndex = imagesInCurrRow[imagesInCurrRow.length - 1];
@@ -108,6 +137,12 @@ var Gallery = React.createClass({
         
     },
     
+    /** @view
+    *   method
+    *   'adjustImage'
+    *   called to set dimension of images after they are rendered (!Important called after all the images are rendered)
+    *   ---------------------------------------------------------------------------------------------------------------
+    */
     adjustImage: function(){
         var totalWidth = IMG_GAL.util.removeUnit($('#gallery').css('width'));
         var availableHeight = IMG_GAL.util.removeUnit($('#gallery').css('height'));
@@ -195,6 +230,12 @@ var Gallery = React.createClass({
     }
 });
 
+/** @view
+*   ReactDOM Object
+*   'ImageBoxList'
+*   the collection of 'ImageBox'es
+*   ------------------------------
+*/
 var ImageBoxList = React.createClass({
     
     render: function(){
@@ -212,6 +253,12 @@ var ImageBoxList = React.createClass({
     }
 });
 
+/** @view
+*   ReactDOM Object
+*   'ImageBox'
+*   holds an 'Image'
+*   ----------------
+*/
 var ImageBox = React.createClass({
     
     getInitialState: function(){
@@ -302,6 +349,12 @@ var ImageBox = React.createClass({
     }
 });
 
+/** @view
+*   ReactDOM Object
+*   'FeedbackBox'
+*   Holds the rounded feedback box
+*   ------------------------------
+*/
 var FeedbackBox = React.createClass({
     componentDidMount: function(){
     
@@ -313,6 +366,12 @@ var FeedbackBox = React.createClass({
     }
 });
 
+/** @view
+*   ReactDOM Object
+*   'Image'
+*   holds an 'image' DOM
+*   --------------------
+*/
 var Image = React.createClass({
     onLoad: function(){
         console.log("Loading");
@@ -325,6 +384,12 @@ var Image = React.createClass({
     }
 });
 
+/** @view
+*   method
+*   'renderGallery'
+*   renders the 'Gallery' view
+*   --------------------------
+*/
 var renderGallery = function(){
     ReactDOM.render(
         <Gallery>
@@ -333,10 +398,22 @@ var renderGallery = function(){
     );
 };
 
+/** @view
+*   method
+*   'deRenderGallery'
+*   removes the 'Gallery' view
+*   --------------------------
+*/
 var deRenderGallery = function(){
     ReactDOM.unmountComponentAtNode(document.getElementById('container'));
 }
 
+/** @view
+*   method
+*   'firstround'
+*   calls the @sub-namespace: IMG_GAL.model.firstround
+*   -----------------------
+*/
 IMG_GAL.controller.firstround(
     {
         loc: IMG_GAL.globals.getLoc(),
