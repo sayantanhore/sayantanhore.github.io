@@ -1,6 +1,7 @@
 node_modules/*
 static/react-0.14.0/*
 .DS_Store
+.sass-cache/
 static/css/.DS_Store
 static/images/.DS_Store
 static/js/.DS_Store

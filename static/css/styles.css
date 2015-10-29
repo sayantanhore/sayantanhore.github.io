@@ -6,6 +6,10 @@
 ::-webkit-scrollbar {
   width: 0em; }
 
+scrollbar[orient='vertical'], scrollbar[orient='vertical'] thumb, scrollbar[orient='vertical'] scrollbarbutton {
+  max-width: 0em !important;
+  -moz-appearance: none !important; }
+
 body {
   background-color: #0B3861; }
   body div#menubar {
