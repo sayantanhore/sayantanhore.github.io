@@ -1,9 +1,15 @@
 "use strict";
 
+/*
+*   This view breaks on firefox now, needs some fixes
+*   -------------------------------------------------
+*/
+
 /** @view
 *   ReactDOM Object
 *   'MenuItem'
-*   ---------------
+*   holds a link on the navigation bar (eg. 'Next')
+*   -----------------------------------------------
 */
 var MenuItem = React.createClass({
     mouseOverHandler: function(){
